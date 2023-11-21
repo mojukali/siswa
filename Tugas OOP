@@ -1,0 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Tugasoop;
+import java.util.Scanner;
+/**
+ *
+ * @author ushai
+ */
+public class siswa {
+    Scanner scanner = new Scanner(System.in);
+    String nis, nama, keterangan;
+    int nilai;
+    public
+            void input() {
+                System.out.print("Masukan Nis\t: ");
+                nis = scanner.next();
+                System.out.print("Masukan Nama\t: ");
+                nama = scanner.next();
+                System.out.print("Masukan Nilai\t: ");
+                nilai = scanner.nextInt();
+            }
+            
+            void proses() {
+                if (nilai >=80 && nilai <= 100) {
+                    keterangan = "Istimewa";
+                }
+                else if (nilai >= 79) {
+                    keterangan = "Baik";
+                }
+                else if (nilai >= 69) {
+                    keterangan = "cukup";
+                }    
+                else if (nilai >= 59) {
+                    keterangan = "Kurang";
+                }
+                else if (nilai < 50 && nilai >= 0) {
+                    keterangan = "Buruk";
+                }
+                else {
+                    System.out.println("Ada salah penginputan. Silahkan cek kembali");
+                }
+            }
+            
+            void cetak() {
+                System.out.println("Keterangan\t: " + keterangan);
+            }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Tugasoop;
+
+/**
+ *
+ * @author ACER
+ */
+public class Tugasoop {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here\
+        siswa data_siswa = new siswa();
+        int w = 1;
+        for (int k = 0; k < 5; k++) {
+            System.out.println(w);
+            data_siswa.input();
+            data_siswa.proses();
+            data_siswa.cetak();
+            System.out.println();
+            w++;
+        }
+    }
+    
+}
